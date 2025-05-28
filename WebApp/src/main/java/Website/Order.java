@@ -48,7 +48,7 @@ public class Order extends HttpServlet {
             
             //Sending mail     
             //sendEmail(String message, String subject, String from, String to)
-             String massageString="Hello Baldev you got order based on 'EVENT TYPE ORDER'\r\n"
+             String massageString="Hello Admin you got order based on 'EVENT TYPE ORDER'\r\n"
              		+"Booking from: " + name + "\r\n"
              		+ "Address: " + add +" \r\n"
              		+ "Mobile No: " + phone+"\r\n"
@@ -58,8 +58,8 @@ public class Order extends HttpServlet {
              		+ "Quantity Required: " + quantity + " jars";
              
              String Subject= "YOU GOT EVENT ORDER...";
-             String from = "ankurchatre1@gmail.com";
-             String to = "shubhammishrame24@gmail.com";
+             String from = "sender@gmail.com";
+             String to = "reciver@gmail.com";
              
            SendMail.sendEmail(massageString,Subject,from,to);
            
