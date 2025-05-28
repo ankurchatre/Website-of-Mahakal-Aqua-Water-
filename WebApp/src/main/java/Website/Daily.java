@@ -49,8 +49,8 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
         		+ "Quantity Required Daily: " + quantity + " jars";
         
         String Subject= "YOU GOT DAILY ORDER...";
-        String from = "ankurchatre1@gmail.com";
-        String to = "shubhammishrame24@gmail.com";
+        String from = "sender@gmail.com";
+        String to = "reciver@gmail.com";
         
       SendMail.sendEmail(massageString,Subject,from,to);
       
