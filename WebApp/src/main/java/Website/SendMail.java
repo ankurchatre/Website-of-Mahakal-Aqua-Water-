@@ -28,7 +28,7 @@ public class SendMail  {
 	        Session session = Session.getInstance(properties, new Authenticator() {
 	            @Override
 	            protected PasswordAuthentication getPasswordAuthentication() {
-	                return new PasswordAuthentication("ankurchatre1@gmail.com", "abcd efgh ijkln opqrs"); // Use the generated app password
+	                return new PasswordAuthentication("abcd@gmail.com", "abcd efgh ijkln opqrs"); // Use the generated app password
 	            }
 	        });
 
