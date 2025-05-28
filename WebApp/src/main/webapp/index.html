@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Jar Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #a0e7e5, #f7fffe);
+            color: #333;
+        }
+
+        header {
+            background-color: #0288d1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #0277bd;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        nav {
+            background-color: #00acc1;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 600px;
+            display: none; /* Hide sections initially */
+        }
+
+        .section h2 {
+            color: #0288d1;
+            font-weight: 700;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+        }
+
+        form input, form select, form button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #0288d1;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: 700;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0277bd;
+        }
+
+        footer {
+            background-color: #0288d1;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 4px solid #0277bd;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mahakal AquaWater</h1>
+        <p>Your trusted source for clean and pure water</p>
+    </header>
+
+    <nav>
+        <a href="#daily" onclick="toggleSection('daily')">Daily Booking</a>
+        <a href="#special" onclick="toggleSection('special')">Booking For Special Events</a>
+        <a href="#contact" onclick="toggleSection('contact')">Contact Us</a>
+    </nav>
+
+    <div class="container">
+        <section id="daily" class="section">
+            <h2>Book for Daily Needs</h2>
+            <form action="/WebApp/daily" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+                <label for="quantity">Quantity (Jars):</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required>
+
+                <label for="date">Start Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label>Delivery Time:</label>
+                <label><input type="radio" name="delivery-time" value="morning" required> Morning</label>
+                <label><input type="radio" name="delivery-time" value="evening" required> Evening</label>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <section id="special" class="section">
+            <h2>Book for Events</h2>
+            <form action="/WebApp/order" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                
+                <label for="event">Event Name:</label>
+                <select id="event" name="event" required>
+                    <option value="wedding">Wedding</option>
+                    <option value="birthday">Birthday Party</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="event-date">Event Date:</label>
+                <input type="date" id="event-date" name="date" required>
+
+                <label for="event-quantity">Quantity (Jars):</label>
+                <input type="number" id="event-quantity" name="quantity" min="1" placeholder="Enter quantity" required>
+
+                <label>Delivery Time:</label>
+                <label><input type="radio" name="delivery-time" value="morning" required> Morning</label>
+                <label><input type="radio" name="delivery-time" value="evening" required> Evening</label>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Phone: +91 9765548535</p>
+            <p>Email: baldevchatre@gmail.com</p>
+            <p>Address: Near Bhatwal CinemaHall Deopur, Dhule, Maharashtra</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Pure Water Jar Service. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show the first section by default
+        toggleSection('daily');
+    </script>
+</body>
+</html>
